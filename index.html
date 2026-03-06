@@ -271,7 +271,6 @@
 
   #story { background: var(--bg-raised); border-top: 1px solid var(--border-dim); }
   
-  /* Smooth Story Paragraph Styles */
   .story-content {
     max-width: 840px;
     margin: 0 auto;
@@ -343,11 +342,10 @@
     line-height: 1.7;
   }
 
-  /* Updated Marathon Section (Text only) */
   #marathon { 
     background: var(--bg-raised); 
     border-top: 1px solid var(--border-dim); 
-    padding-bottom: 5rem; /* Reduced padding since image follows immediately */
+    padding-bottom: 5rem; 
   }
   .marathon-content {
     max-width: 800px;
@@ -362,14 +360,12 @@
   .m-num span { color: var(--accent); }
   .m-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
   
-  /* Parallax Scrolling Image Section */
   .parallax-marathon {
     width: 100%;
-    height: 75vh; /* Takes up 75% of the screen height */
-    /* This connects to the image you uploaded */
+    height: 75vh; 
     background-image: url('a54a10f3-a55f-4c0c-9fad-00246ec36eb2.jpg');
-    background-attachment: fixed; /* This is the magic property that creates the cool parallax effect */
-    background-position: center;
+    background-attachment: fixed; 
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -377,7 +373,6 @@
     border-bottom: 1px solid var(--border-dim);
   }
   
-  /* Subtle top/bottom shadow gradients so the photo blends perfectly with the dark theme */
   .parallax-marathon::after {
     content: '';
     position: absolute;
@@ -420,6 +415,7 @@
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+  /* MOBILE SPECIFIC FIXES */
   @media (max-width: 860px) {
     .nav-links { display: none; }
     .hero-inner { grid-template-columns: 1fr; }
@@ -430,6 +426,13 @@
     .skill-card:nth-child(3n) { border-right: 1px solid var(--border-dim); }
     .skill-card:nth-child(2n) { border-right: none; }
     .video-grid { grid-template-columns: 1fr; }
+    
+    /* IOS PARALLAX BUG FIX */
+    .parallax-marathon {
+        background-attachment: scroll; /* Removes the fixed effect on mobile to prevent extreme zooming */
+        height: 45vh; /* Adjusts the height slightly so it frames well on smaller screens */
+    }
+
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
