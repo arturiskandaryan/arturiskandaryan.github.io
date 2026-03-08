@@ -52,9 +52,9 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 200;
-    height: 60px; /* Increased slightly for better visual balance */
+    height: 60px; 
     display: flex;
-    justify-content: flex-end; /* Links on the far right */
+    justify-content: flex-end; 
     align-items: center;
     padding: 0 var(--page-pad);
     background: rgba(14,15,17,0.88);
@@ -83,95 +83,79 @@
     font-weight: 400;
     color: var(--text-tertiary);
     text-decoration: none;
-    text-transform: uppercase; /* Match Rich Roll link style */
+    text-transform: uppercase; 
     letter-spacing: 0.08em;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--text-primary); }
 
-  /* New Hero CSS to match Rich Roll */
   #hero {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
     padding: calc(60px + 4rem) var(--page-pad) 4rem;
     position: relative;
-    /* Updated background support */
-    background-image: url('hero-bg.jpg'); /* USER: ADD A BACKGROUND IMAGE HERE */
+    background-image: url('hero-bg.jpg'); /* ADD A PROFESSIONAL BACKGROUND IMAGE HERE */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   
-  /* Dark overlay to ensure text readability on a background image */
   #hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(14, 15, 17, 0.82); /* Adjust opacity based on your photo */
+    background: rgba(14, 15, 17, 0.82); 
     z-index: 1;
   }
 
   .hero-inner {
     max-width: 1000px;
     position: relative;
-    z-index: 2; /* Place content above the overlay */
+    z-index: 2; 
   }
 
-  .hero-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    color: var(--accent);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.7s 0.15s ease-out forwards;
-  }
-
-  /* Core Mission Statement - Huge and Big, matching 'Peace, plants & performance' */
   .hero-mission {
-    font-family: var(--font-display);
-    font-size: clamp(2.2rem, 6.5vw, 5.2rem);
-    font-weight: 800;
+    font-family: var(--font-body); /* Using the body font for that clean, modern geometric sans-serif look */
+    font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+    font-weight: 700;
     color: var(--text-primary);
-    line-height: 1.0;
-    letter-spacing: -0.02em;
-    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.25rem;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     opacity: 0;
-    animation: fadeUp 0.7s 0.3s ease-out forwards;
+    animation: fadeUp 0.7s 0.2s ease-out forwards;
   }
 
-  /* Elaboration Text - Smaller, all-caps, matching 'TRANSFORM YOUR LIFE...' */
   .hero-tagline {
-    font-family: var(--font-mono);
-    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-    font-weight: 400;
-    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+    font-weight: 500;
+    color: var(--text-primary); /* Made brighter to match the crisp white sub-text */
     line-height: 1.6;
-    max-width: 600px;
+    max-width: 700px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     margin-bottom: 3.5rem;
     margin-left: auto;
     margin-right: auto;
     opacity: 0;
-    animation: fadeUp 0.7s 0.45s ease-out forwards;
+    animation: fadeUp 0.7s 0.35s ease-out forwards;
   }
 
   .hero-ctas {
     display: flex;
-    justify-content: center; /* Center buttons */
+    justify-content: center; 
     gap: 0.75rem;
     flex-wrap: wrap;
     opacity: 0;
-    animation: fadeUp 0.7s 0.6s ease-out forwards;
+    animation: fadeUp 0.7s 0.5s ease-out forwards;
   }
   
   .btn {
@@ -193,8 +177,6 @@
   .btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-subtle); }
   .btn-ghost:hover { border-color: var(--border-strong); color: var(--text-primary); transform: translateY(-1px); }
   
-  /* Stats grid is removed from hero in new structure */
-
   .hero-divider {
     grid-column: 1 / -1;
     height: 1px;
@@ -369,7 +351,6 @@
   .m-num span { color: var(--accent); }
   .m-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
   
-  /* User: DON'T TOUCH THIS (Marathon photo below hero) */
   .parallax-marathon {
     width: 100%;
     height: 75vh; 
@@ -428,10 +409,9 @@
   /* MOBILE SPECIFIC FIXES */
   @media (max-width: 860px) {
     .nav-links { display: none; }
-    /* Mobile nav logo adjustment */
     .nav-logo { position: relative; left: auto; transform: none; margin-left: auto; margin-right: auto; }
     
-    .hero-mission { font-size: 2.2rem; } /* Reduce huge text on mobile */
+    .hero-mission { font-size: 2.2rem; } 
     .hero-tagline { font-size: 0.75rem; margin-bottom: 2.5rem; }
 
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -440,10 +420,9 @@
     .skill-card:nth-child(2n) { border-right: none; }
     .video-grid { grid-template-columns: 1fr; }
     
-    /* IOS PARALLAX BUG FIX */
     .parallax-marathon {
-        background-attachment: scroll; /* Removes the fixed effect on mobile to prevent extreme zooming */
-        height: 45vh; /* Adjusts the height slightly so it frames well on smaller screens */
+        background-attachment: scroll; 
+        height: 45vh; 
     }
 
     .form-row { grid-template-columns: 1fr; }
@@ -470,11 +449,10 @@
 
 <section id="hero">
   <div class="hero-inner">
-    <p class="hero-eyebrow">Technical Fluency. Human Understanding.</p>
     
-    <h1 class="hero-mission">Some people speak technology. Some people speak human. I speak both.</h1>
+    <h1 class="hero-mission">Tech, talent &amp; trust.</h1>
     
-    <p class="hero-tagline">My work sits at the intersection of complex systems and the people who need to use them.</p>
+    <p class="hero-tagline">Bridging complex systems with genuine human connection.</p>
     
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">
@@ -491,7 +469,7 @@
       </a>
     </div>
     
-    </div>
+  </div>
   <div class="hero-divider"></div>
 </section>
 
@@ -696,17 +674,14 @@
 </footer>
 
 <script>
-  // Fade up animation observer
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) setTimeout(() => e.target.classList.add('vis'), i * 80);
     });
   }, { threshold: 0.12 });
   
-  // USER: stats grid removal means we can remove it from observer
   document.querySelectorAll('.story-content p, .skill-card, .video-card').forEach(el => obs.observe(el));
 
-  // Nav background blur effect on scroll
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
